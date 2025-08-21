@@ -120,3 +120,9 @@ document.addEventListener('DOMContentLoaded', loadAdropAds);
 ## Test
 
 Open `web/index.html` in a browser to see the integration in action with test unit `PUBLIC_TEST_UNIT_ID_375_80`.
+
+![Adrop Ad Integration Test](images/preview.png)
+
+## Documentation
+
+For more detailed information about Adrop API integration, please visit our [Developer Guide](https://help.adrop.io/developer-guide/adrop-api/rest-api).
