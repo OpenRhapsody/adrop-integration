@@ -16,13 +16,9 @@
 
             try {
                 const searchParams = new URLSearchParams(params);
-                const response = await fetch(`https://api-v2.adrop.io/request?${searchParams}`, {
+                const response = await fetch(`https://api-v2.adrop.io/request/web?${searchParams}`, {
                     method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                        // Authorization will be deprecated - no longer required in future versions
-                        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjAxSEQ1UTNaOEdYTk5XRjQ2NENOV0NNQlM0OjAxSEZCTU1HRkZXUU5OMk5aVkpCNU5GUFZaIiwia2V5VHlwZSI6MSwiaWF0IjoxNzAwMTI0MDQ5LCJleHAiOjI1MzQwMjEyODAwMH0.J877rLr4xvUWqcEzsesEp_KNzO8XnHaJeESPXdABubQ'
-                    },
+                    headers: { 'Accept': 'application/json' },
                     signal: controller.signal
                 });
 
@@ -60,7 +56,6 @@
                     const adData = await fetchAd({
                         unit,
                         uid: el.getAttribute('data-adrop-uid'),
-                        pf: 'web',
                         lcl: navigator.language || 'en-US',
                     });
 

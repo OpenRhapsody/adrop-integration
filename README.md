@@ -4,7 +4,7 @@ A simple integration guide and test page for implementing Adrop ads on websites.
 
 ## Quick Start
 
-1. Copy the JavaScript code from `web/index.html` to your website
+1. Copy the JavaScript code from `web/request-ad.html` to your website
 2. Add ad containers with required attributes
 3. Ads will load automatically
 
@@ -28,12 +28,9 @@ async function fetchAd(params, retries = 3) {
     
     try {
         const searchParams = new URLSearchParams(params);
-        const response = await fetch(`https://api-v2.adrop.io/request?${searchParams}`, {
+        const response = await fetch(`https://api-v2.adrop.io/request/web?${searchParams}`, {
             method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Authorization': 'YOUR_JWT_TOKEN'  // Will be deprecated - no longer required in future versions
-            },
+            headers: { 'Accept': 'application/json' },
             signal: controller.signal
         });
         
@@ -65,7 +62,6 @@ async function loadAdropAds() {
         const adData = await fetchAd({
             unit,
             uid: el.getAttribute('data-adrop-uid'),
-            pf: 'web',
             lcl: navigator.language || 'en-US'
         });
         
@@ -115,11 +111,10 @@ document.addEventListener('DOMContentLoaded', loadAdropAds);
 - Direct API integration with https://api-v2.adrop.io/request
 - Automatic browser locale detection
 - Dynamic ad sizing based on API response
-- JWT token authentication (will be deprecated - no longer required in future versions)
 
 ## Test
 
-Open `web/index.html` in a browser to see the integration in action with test unit `PUBLIC_TEST_UNIT_ID_375_80`.
+Open `web/request-ad.html` in a browser to see the integration in action with test unit `PUBLIC_TEST_UNIT_ID_375_80`.
 
 ![Adrop Ad Integration Test](images/preview.png)
 
