@@ -121,3 +121,8 @@ Open `web/request-ad.html` in a browser to see the integration in action with te
 ## Documentation
 
 For more detailed information about Adrop API integration, please visit our [Developer Guide](https://help.adrop.io/developer-guide/adrop-api/rest-api).
+
+## Live Demo
+
+- [Ad Integration Test](https://openrhapsody.github.io/adrop-integration/web/request-ad.html)
+- [AdBlock Detection Test](https://openrhapsody.github.io/adrop-integration/web/ad-block.html)
